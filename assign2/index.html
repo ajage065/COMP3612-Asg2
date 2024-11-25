@@ -1,0 +1,207 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>Comp 3612 Assignment 2</title>
+	<link href="css/styles.css" rel="stylesheet" />
+	<script src="js/assg2.js" type="text/JavaScript"></script>
+</head>
+
+<body>
+	<article id=home>
+		<header>
+			<img src="images/f1logo.png"/>
+			<h1>F1 Dashboard Project</h1> 
+		</header>
+		<div id=homepage>
+			<div id=description>
+				<p>View races, display race and qualifying results, find information on individual circuits, drivers, and constructors, and save your favorites!</p>
+				<form id=season-form>
+					<label>Season</label>
+					<select name=season>
+						<option value="" selected disabled hidden>Select a Season</option>
+						<option value="2020">2020</option>
+						<option value="2021">2021</option>
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+					</select>
+				</form>
+				<div id=credits>
+					<p>Alfred Jageregger</p>
+					<a href="https://github.com">Github Repo</a>
+				</div>
+			</div>
+			<div id=home-img>
+				<img src="images/f1race.jpg">
+			</div>
+		</div>	
+	</article>
+	
+	<article id=browse style="display:none;">
+		<header>
+			<img id=logo src="images/f1logo.png"/>
+			<h1>F1 Dashboard Project</h1>
+			<button id=home-button>Home</button>
+			<button id=faves-button>Favorites</button>
+		</header>
+		<div id=race-browser>
+			<h2></h2>
+			<table>
+				<thead>
+					<th><button class=current-sort value="round">Rnd</button></th>
+					<th><button value="name">Name</button></th>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		<div id=browser-results style="display:none;">
+			<h2></h2>
+			<div id=race-info>
+				<ul>
+					<li id=race-circuit><button class=circuit></button></li>
+					<li id=round></li>
+					<li id=date></li>
+					<li id=race-url><a></a></li>
+				</ul>
+			</div>
+			<div id=qualifying>
+				<h3>Qualifying</h3>
+				<table>
+					<thead>
+						<th><button class=current-sort value="position">Pos</button></th>
+						<th><button value="driver.surname">Name</button></th>
+						<th><button value="constructor.name">Const</button></th>
+						<th><button value="q1">Q1</button></th>
+						<th><button value="q2">Q2</button></th>
+						<th><button value="q3">Q3</button></th>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			<div id=race-results>
+				<h3>Results</h3>
+				<ol id=first-three>
+					<li id=place-1>
+						<h3>1st</h3>
+						<img src="https://placehold.co/100x100"></img>
+						<button class=driver></button>
+					</li>
+					<li id=place-2>
+						<h3>2nd</h3>
+						<img src="https://placehold.co/100x100"></img>
+						<button class=driver></button>
+					</li>
+					<li id=place-3>
+						<h3>3rd</h3>
+						<img src="https://placehold.co/100x100"></img>
+						<button class=driver></button>
+					</li>
+				</ol>
+				<table>
+					<thead>
+						<th><button class=current-sort value="position">Pos</button></th>
+						<th><button value="driver.surname">Name</button></th>
+						<th><button value="constructor.name">Const</button></th>
+						<th><button value="laps">Laps</button></th>
+						<th><button value="points">Pts</button></th>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+	</article>
+	
+	<dialog id=constructor>
+		<div id=constructor-info>
+			<h2>Constructor Details</h2>
+			<img src="https://placehold.co/300x300"></img>
+			<ul>
+				<li id=const-name></li>
+				<li id=const-nation></li>
+				<li id=const-url><a></a></li>
+			</ul>
+			<button class=favorite>Add to Favorites</button>
+		</div>
+		<div id=constructor-results>
+			<h3><h3>
+			<table>
+				<thead>
+					<th>Rnd</th>
+					<th>Name</th>
+					<th>Driver</th>
+					<th>Pos</th>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		<button class=close>Close</button>
+		<button class="close icon">X</button>
+	</dialog>
+	
+	<dialog id=driver>
+		<div id=driver-info>
+			<h2>Driver Details</h2>
+			<img src="https://placehold.co/300x300"></img>
+			<ul>
+				<li id=driver-name></li>
+				<li id=driver-age></li>
+				<li id=driver-nation></li>
+				<li id=driver-url><a></a></li>
+			</ul>
+			<button class=favorite>Add to Favorites</button>
+		</div>
+		<div id=driver-results>
+			<h3><h3>
+			<table>
+				<thead>
+					<th>Rnd</th>
+					<th>Name</th>
+					<th>Pos</th>
+					<th>Pts</th>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		<button class=close>Close</button>
+		<button class="close icon">X</button>
+	</dialog>
+	
+	<dialog id=circuit>
+		<img src="https://placehold.co/300x300"></img>
+		<div id=circuit-info>
+			<h2>Circuit Details</h2>
+			<ul>
+				<li id=circuit-name></li>
+				<li id=circuit-location></li>
+				<li id=circuit-url><a></a></li>
+			</ul>
+			<button class=favorite>Add to Favorites</button>
+		</div>
+		<button class=close>Close</button>
+		<button class="close icon">X</button>
+	</dialog>
+	
+	<dialog id=favorites>
+		<h2>Favorites</h2>
+		<button id=empty>Empty Favorites</button>
+		<div id=favorite-lists>
+			<div id=favorite-drivers class=favorite-list>
+				<h3>Drivers</h3>
+				<ul></ul>
+			</div>
+			<div id=favorite-constructors class=favorite-list>
+				<h3>Constructors</h3>
+				<ul></ul>
+			</div>
+			<div id=favorite-circuits class=favorite-list>
+				<h3>Circuits</h3>
+				<ul></ul>
+			</div>
+		</div>
+		<button class=close>Close</button>
+		<button class="close icon">X</button>
+	</dialog>
+	
+	<dialog id=loading></dialog>
+</body>
+</html>
