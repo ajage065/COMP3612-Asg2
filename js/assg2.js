@@ -272,6 +272,7 @@ async function displayConstructor(constRef, season){
 	let favoriteButton = dialog.querySelector("button.favorite");
 	favoriteButton.value = constructor.constructorRef;
 	if (isFavorite(favoriteButton.value)) favoriteButton.classList.add("is-favorite");
+	else favoriteButton.classList.remove("is-favorite");
 	favoriteButton.dataset.handler = JSON.stringify(constructor);
 	dialog.showModal();
 }
@@ -327,6 +328,7 @@ async function displayDriver(driverRef, season){
 	let favoriteButton = dialog.querySelector("button.favorite");
 	favoriteButton.value = driver.driverRef;
 	if (isFavorite(favoriteButton.value)) favoriteButton.classList.add("is-favorite");
+	else favoriteButton.classList.remove("is-favorite");
 	favoriteButton.dataset.handler = JSON.stringify(driver);
 	dialog.showModal();
 }
@@ -356,6 +358,7 @@ async function displayCircuit(circId){
 	let favoriteButton = dialog.querySelector("button.favorite");
 	favoriteButton.value = circuit.circuitRef;
 	if (isFavorite(favoriteButton.value)) favoriteButton.classList.add("is-favorite");
+	else favoriteButton.classList.remove("is-favorite");
 	favoriteButton.dataset.handler = JSON.stringify(circuit);
 	dialog.showModal();
 }
